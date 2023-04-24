@@ -1,0 +1,39 @@
+<!-- 输出json.grade 的值 -->
+<p>  {{'成绩为：'}} {{ json.grade  }} </p>
+
+<!-- 判断成绩处于什么档次 -->
+{%if json.grade > 90 and json.grade <= 100 %} 优秀
+{% elif json.grade > 60 and json.grade <= 90 %} 合格
+{% else %} 一边玩去～
+{% endif %} <hr>
+
+<!-- for遍历列表【1,2,3】 -->
+{% for i in json.list %}
+{{ i  }} <br>
+{% endfor %} <hr>
+
+<!-- for遍历字典 -->
+{% for i,j in json.items %}
+{{ i }}：{{ j }}
+{% endfor %} <hr>
+
+<!-- 反向序列化reversed -->
+{% for i,j in json.items reversed%}
+{{ i }}：{{ j }}
+{% endfor %} <hr>
+
+<!-- for遍历字典 -->
+{#forloop.counter: 顺序获取循环序号，从 1 开始计算#}
+{#forloop.counter0: 顺序获取循环序号，从 0 开始计算#}
+{#forloop.revcounter: 倒序获取循环序号，结尾序号为 1#}
+{#forloop.revcounter0: 倒序获取循环序号，结尾序号为 0#}
+{#forloop.first（一般配合if标签使用）: 第一条数据返回 True，其他数据返回 False#}
+{#forloop.last（一般配合if标签使用）: 最后一条数据返回 True，其他数据返回 False#}
+{% for i in json.views_list %}
+    {{ forloop.counter }}
+    {{ forloop.counter0 }}
+    {{ forloop.revcounter }}
+    {{ forloop.revcounter0 }}
+    {{ forloop.first }}
+    {{ forloop.last }}
+{% endfor %}

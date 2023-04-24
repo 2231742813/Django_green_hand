@@ -1,0 +1,28 @@
+<!-- 显示列表list -->
+<p>{{ name1 }} }}</p> <hr>
+<!-- 列表【0】-->
+<p>{{ name1.0 }}</p> <hr>
+<!-- 列表【1】 -->
+<p>{{ name1.1 }}</p> <hr>
+<!-- name1[4]中age键的值-->
+<p>{{ name1.4.age }}</p> <hr>
+<!-- 大写-->
+<p>{{ name1.5.addres|upper }}</p> <hr>
+<!-- 小写-->
+<p>{{ name1.5.addres|lower }}</p> <hr>
+<!-- 只取第一位，然后大写-->
+<p>{{ name1.5.addres|first|upper }}</p> <hr>
+<!-- 若长度大于1只显示1位-->
+<p>{{ name1.5.addres|truncatewords:"1"|lower }}</p> <hr>
+<!-- 变量为空，设置默认值-->
+<p>{{ name1.100|default:"name1.100为空，设置默认值"}}</p> <hr>
+<!-- 列表【3】-->
+<p>{{ name1.3}}</p> <hr>
+<!-- 列表【3】的长度-->
+<p>{{ name1.3|length}}</p> <hr>
+<!-- 时间默认值-->
+<p>{{ name1.2}}</p> <hr>
+<!-- 时间年与日小时分钟秒-->
+<p>{{ name1.2|date:"Y-m-d H:i:s" }}</p> <hr>
+<!-- 链接安全-->
+<p>{{ name1.6|safe}}</p>
